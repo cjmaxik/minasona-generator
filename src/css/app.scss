@@ -1,1 +1,6 @@
 // app global css in SCSS form
+
+body {
+  background: rgb(82,15,144) !important;
+  background: radial-gradient(circle, rgba(82,15,144,1) 1%, rgba(33,17,61,1) 50%) !important;
+}

@@ -1,44 +1,29 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="props.link"
-  >
-    <q-item-section
-      v-if="props.icon"
-      avatar
-    >
-      <q-icon :name="props.icon" />
-    </q-item-section>
-
-    <q-item-section>
-      <q-item-label>{{ props.title }}</q-item-label>
-      <q-item-label caption>{{ props.caption }}</q-item-label>
+  <q-item dense v-ripple clickable :active="isActive" @click="store.setMinasonaPart(type, id)">
+    <q-item-section style="text-transform: capitalize;">
+      <q-item-label>{{ props.id }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
 
 <script setup>
+import { useMinasonaStore } from 'stores/minasonaStore'
+const store = useMinasonaStore()
+
 const props = defineProps({
-  title: {
+  type: {
     type: String,
     required: true
   },
 
-  caption: {
+  id: {
     type: String,
-    default: ''
+    required: true
   },
 
-  link: {
-    type: String,
-    default: '#'
-  },
-
-  icon: {
-    type: String,
-    default: ''
+  isActive: {
+    type: Boolean,
+    required: true
   }
 })
 </script>

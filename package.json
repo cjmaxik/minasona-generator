@@ -7,10 +7,10 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "dev": "quasar clean && quasar dev",
+    "build": "quasar clean && quasar build",
     "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev",
-    "build": "quasar build"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "pinia": "^2.0.11",

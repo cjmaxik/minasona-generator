@@ -3,6 +3,7 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
+import path from 'path'
 import { configure } from 'quasar/wrappers'
 
 export default configure((/* ctx */) => {
@@ -61,6 +62,10 @@ export default configure((/* ctx */) => {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
+
+      alias: {
+        data: path.join(__dirname, './src/data')
+      },
 
       vitePlugins: [
         ['vite-plugin-checker', {
